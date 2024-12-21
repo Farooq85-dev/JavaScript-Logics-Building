@@ -44,4 +44,63 @@ function isArmStrong(num) {
   return result === num;
 }
 
-console.log(isArmStrong(370));
+// console.log(isArmStrong(370));
+
+// Problem #17:-
+// Create a function that prints from 1 to N.
+// replace multiple of 3 with "Fizz";
+// replace multiple of 5 with "Buzz";
+
+function replaceFizzBuzz(num) {
+  for (let i = 1; i <= num; i++) {
+    if (i % 5 === 0 && i % 3 === 0) {
+      console.log("5 aur 3 Wale --->", i, "Fizz Buzz");
+    } else if (i % 3 === 0) {
+      console.log("3 Wale --->", i, "Fizz");
+    } else if (i % 5 === 0) {
+      console.log("5 Wale --->", i, "Buzz");
+    }
+  }
+}
+
+// console.log(replaceFizzBuzz(15));
+
+// Problem #19:-
+// Create a function that prints number pyramids.
+
+function printPyramidPattern(num) {
+  for (let j = 1; j <= num; j++) {
+    let lineCnt = "";
+    //Adding spaces...
+    for (let space = 1; space <= num - j; space++) {
+      lineCnt += " ";
+    }
+    // Adding counting...
+    for (let count = 1; count <= j; count++) {
+      lineCnt += count;
+    }
+    // Adding reverse Counting...
+    for (let reverseCount = j - 1; reverseCount >= j; reverseCount--) {
+      lineCnt += reverseCount;
+    }
+    console.log(lineCnt);
+  }
+}
+
+// console.log(printPyramidPattern(5));
+
+// Problem 20:-
+// Create a function that calculates the how many times that chartacter comes in a string.
+
+function calcCharacters(str) {
+  let obj = {};
+
+  for (let i = 0; i < str.length; i++) {
+    if (!obj[str[i]]) {
+      obj[str[i]] = 0;
+    }
+    obj[str[i]] += 1;
+  }
+  return obj;
+}
+console.log(calcCharacters("Happy Coding!"));
